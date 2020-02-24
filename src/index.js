@@ -35,7 +35,7 @@ app.use("/links",require("./routes/links"));
 app.use("/administrativos",require("./routes/administrativos"));
 app.use("/docentes",require("./routes/docentes"));
 app.use("/estudiantes",require("./routes/estudiantes"));
-app.use("/aseadores",require("./routes/aseadores"));
+
 
 
 

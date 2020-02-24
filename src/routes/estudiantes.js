@@ -4,7 +4,7 @@ const router=express.Router();
 
 router.get("/agregar",async(req,res)=>{
     //res.send("feo");
-    res.render('estudiantes/add');
+    res.render('estudiantes/agregar');
 });
 router.get("/eliminar",async(req,res)=>{
     //res.send("feo");
