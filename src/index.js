@@ -36,14 +36,17 @@ app.use("/administrativos",require("./routes/administrativos"));
 app.use("/docentes",require("./routes/docentes"));
 app.use("/estudiantes",require("./routes/estudiantes"));
 app.use("/album",require("./routes/album"));
+app.use("/artista",require("./routes/artista"));
+app.use("/peticiones",require("./routes/peticiones"));
 
 
 
 
 
 //public
-app.unsubscribe(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,"public")));
 //inicio del server
+
 app.listen(app.get("port"),()=>{
     console.log("server on port",app.get("port"));
 });
