@@ -2,13 +2,13 @@ const express = require("express");
 const router=express.Router();
 const pool = require("../database");
 
-router.get("/",async(req,res)=>{
+router.get("/add",async(req,res)=>{
     //res.send("feo");
     const album = await pool.query("select * from albunes"); 
     res.render("album/add",{album});
 });
 
-router.post("/",async(req,res)=>{
+router.post("/add",async(req,res)=>{
     //res.send("feo");
     //console.log(req.body);
             const {id,nombre,artista,fecha}= req.body;
