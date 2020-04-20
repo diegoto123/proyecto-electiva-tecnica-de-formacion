@@ -36,12 +36,8 @@ app.use("/administrativos",require("./routes/administrativos"));
 app.use("/docentes",require("./routes/docentes"));
 app.use("/estudiantes",require("./routes/estudiantes"));
 app.use("/album",require("./routes/album"));
-<<<<<<< HEAD
 app.use("/artista",require("./routes/artista"));
 app.use("/peticiones",require("./routes/peticiones"));
-=======
-app.use("/artistas",require("./routes/artistas"));
->>>>>>> bddb2113dcf054e4b8a35987699397f7569cbca2
 
 
 
