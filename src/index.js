@@ -44,7 +44,7 @@ app.use("/peticiones",require("./routes/peticiones"));
 
 
 //public
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,'public')));
 //inicio del server
 
 app.listen(app.get("port"),()=>{

@@ -43,13 +43,13 @@
                             <label for="">Agregar</label>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="nombre" id="" >
+                            <input class="form-control" type="text" name="nombre" id="" placeholder="artista">
                         </div>
                           <div class="form-group">
-                            <input class="form-control" type="text" name="genero" id="" >
+                            <input class="form-control" type="text" name="genero" id="" placeholder="genero">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="albumes" id="">
+                            <input class="form-control" type="text" name="album" id="" placeholder="album">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-block">Enviar</button>
@@ -57,5 +57,31 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="car-bady">
+            <h1>Albumes</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">artista</th>
+                    <th scope="col">genero</th>
+                    <th scope="col">album</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each peticion}}
+                    <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{nombre}}</td>
+                    <td>{{genero}}</td>
+                    <td>{{album}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                </table>
         </div>
     </div>

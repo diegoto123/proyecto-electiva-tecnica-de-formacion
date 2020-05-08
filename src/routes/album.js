@@ -11,8 +11,8 @@ router.get("/add",async(req,res)=>{
 router.post("/add",async(req,res)=>{
     //res.send("feo");
     //console.log(req.body);
-            const {id,nombre,artista,fecha}= req.body;
-            const newAlbum = {id,nombre,artista,fecha};
+            const {id,nombre,link,artista,fecha}= req.body;
+            const newAlbum = {id,link,nombre,artista,fecha};
 
         await pool.query("insert into albunes set ?", [newAlbum]);
         res.redirect("/album");
