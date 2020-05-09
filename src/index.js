@@ -30,14 +30,10 @@ app.use((req,res,next)=>{
 
 //rutas
 app.use(require("./routes"));
-app.use(require("./routes/authentication"));
-app.use("/links",require("./routes/links"));
-app.use("/administrativos",require("./routes/administrativos"));
-app.use("/docentes",require("./routes/docentes"));
-app.use("/estudiantes",require("./routes/estudiantes"));
 app.use("/album",require("./routes/album"));
 app.use("/artista",require("./routes/artista"));
 app.use("/peticiones",require("./routes/peticiones"));
+app.use("/admins",require("./routes/admins"));
 
 
 

@@ -1,31 +1,23 @@
 const express = require("express");
 const router=express.Router();
 const pool = require("../database");
-//const pool = require("../database");
 
-//router.get("/artista",async(req,res)=>{
-    //res.send("feo");
-    //res.render("artista/artista");
-//});
-router.post("/artistaa",async(req,res)=>{
-    //res.send("feo");
-    //console.log(req.body);
-            const {id,nombre,genero,albumes}= req.body;
-            const newArtista = {id,nombre,genero,albumes};
 
-        await pool.query("insert into artista set ?", [newArtista]);
-        res.redirect("/artistaa");
-    //const usua = await pool.query("select * from usuarios"); 
-    //res.render("links/add",{usua});
-});
-router.get("/artistaa",async(req,res)=>{
-    //res.send("feo");
-    const artista = await pool.query("select * from artista"); 
-    res.render("artista/artistaa",{artista});
-});
 router.get("/artista",async(req,res)=>{
-    //res.send("feo");
     const artista = await pool.query("select * from artista"); 
     res.render("artista/artista",{artista});
 });
+
+router.get("/artistaa/:id_artista",async(req,res)=>{
+    const { id_artista } = req.params;
+    const artistaid = await pool.query('SELECT * FROM artista WHERE id_artista= ?', [id_artista]);
+    res.render('artista/artistaa', { artistaid });
+});
+
+router.get("/albumes/:artista", async (req, res) => {
+    const {artista } = req.params;
+    const album = await pool.query("select * from albumes where artista = ? ",[artista]);
+    res.render("album/add", { album });
+});
+
 module.exports= router;

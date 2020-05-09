@@ -24,35 +24,33 @@
             </li>
           </ul>
           <a class="btn btn-warning" href="/admins/pass">admins</a>
-
         </div>
       </nav>
     </div>
   </div>
 
   </nav>
+
+
+
   <section class="group group--color">
     <div class="container">
       <p class="main__txt">
+      <form action="/admins/pass/validar" class="form-inline" method="POST">
+        <div class="form-group mb-2">
+          <label for="staticEmail2" class="sr-only">nick</label>
+          <input type="text"  class="form-control"  placeholder="nickname" name="name">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="inputPassword2" class="sr-only">Password</label>
+          <input type="password" class="form-control"  placeholder="Password" name="password">
+          <input type="hidden" {{#each usua}} value="{{usuario}}" {{/each}} name="usuario">
+          <input type="hidden" {{#each usua}} value="{{contra}}" {{/each}} name="contra">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">ingresar</button>
+      </form>
 
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">Artista</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {{#each artista}} <th scope="row">{{id_artista}}</th>
 
-            <td><a href="artistaa/{{id_artista}}">{{nombre}}</a></td>
-          </tr>{{/each}}
-        </tbody>
-      </table>
       </p>
     </div>
   </section>
-
-
-  </html>
